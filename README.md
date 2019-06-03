@@ -1,6 +1,10 @@
 Installing and Running Altera's Quartus II on Linux
 ====
 
+Please note that this tutorial is intended for Debian-derived Linux distros such as Ubuntu, Mint, MX, etc.
+
+Users running Arch-based distros should refer to the [Arch Wiki](https://wiki.archlinux.org/index.php/Altera_Design_Software) (in fact, arch users can automatically download, install, and get the Quartus toolkit to work on their computers by simply using one of the [AUR's packages](https://aur.archlinux.org/packages/?O=0&K=quartus-free)).
+
 
 ## 1) Download & Install
 
@@ -19,7 +23,7 @@ Give the downloaded script execution permission: `chmod +x QuartusSetup.run`
 Run the installation script: `/path/to/script/QuartusSetup.run`
 
 
-## 2) Add Path dependencies
+## 2) Add path dependencies
 
 Create the following script file to be run at startup, one way to accomplish this is to append `source /path/to/script/quartus.sh` to your shell configuration file.
 
@@ -48,12 +52,12 @@ It may also require starting it through the terminal with:
 
 ```$SOPC_KIT_NIOS2/bin/eclipse-nios2 -configuration $HOME/.nios2-ide-6.1 $WORKSPACE_ARGS "$@"```
 
-Other packages I've needed to install were gcc­-multilib, lib32ncurses5, libx11-6, libfreetype6, libpng12, libc6, libxtst6, zlib1g, libssl1.0.0 and libssl-dev; generally the i386 versions. You may also need Java 8 or greater.
+Extra packages I needed to get on a MX Linux install included `gcc-multilib`, `lib32ncurses5`, `libx11-6`, `libfreetype6`, `libpng12`, `libc6`, `libxtst6`, `zlib1g`, `libssl1.0.0` and `libssl-dev`; generally the `:i386` versions. You may also need Java 8 or greater.
 
 
 ## 4) USB-Blaster configuration
 
-### Taken from [here](http://www.fpga-dev.com/altera-usb-blaster-with-ubuntu/).
+### This part is based on [a blog post from fpga-dev](http://www.fpga-dev.com/altera-usb-blaster-with-ubuntu/).
 
 At first, connect the cable and make sure the USB device is recognized:
 
